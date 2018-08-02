@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmCross" Version="6.0.1" />
+    <PackageReference Include="MvvmCross.Forms" Version="6.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="2.5.1.444934" />
+    <PackageReference Include="MvvmCross.Plugin.JsonLocalization" Version="6.0.1" />
+    <PackageReference Include="MediatR" Version="5.1.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="App.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="FormsApp.xaml.cs">
+      <DependentUpon>FormsApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="GlobalStyles.xaml.cs">
+      <DependentUpon>GlobalStyles.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Themes\BaseTheme.xaml.cs">
+      <DependentUpon>BaseTheme.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Resources\Themes\MainStyles.xaml.cs">
+      <DependentUpon>MainStyles.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\StartPage.xaml.cs">
+      <DependentUpon>StartPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Themes\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Services\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Models\" />
+    <Folder Include="Resources\Translations\" />
+    <Folder Include="Handlers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Translations\StartViewModel.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Translations\StartViewModel.json" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="MediatrTest.Core.FormsApp" xmlns:d="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms" xmlns:theme="clr-namespace:MediatrTest.Core.Resources.Themes" xmlns:global="clr-namespace:MediatrTest.Core">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <global:GlobalStyles />
+                <theme:MainStyles />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
