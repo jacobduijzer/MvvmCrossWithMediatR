@@ -2,8 +2,6 @@
 using Xunit;
 using MvvmCross.IoC;
 using MediatR;
-using MediatrTest.Core.Models;
-using MediatrTest.Core.Handlers;
 using System;
 
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
@@ -28,7 +26,13 @@ namespace MediatrTest.Tests
                 }
             });
 
-            Ioc.LazyConstructAndRegisterSingleton<IRequestHandler<Ping, Pong>, PingHandler>();
+            typeof(MediatrTest.Core.CoreApp)
+                .Assembly
+                .CreatableTypes()
+                .EndingWith("Handler")
+                .AsInterfaces()
+                .RegisterAsLazySingleton();
+            
             Ioc.LazyConstructAndRegisterSingleton<IMediator, Mediator>();
         }
     }

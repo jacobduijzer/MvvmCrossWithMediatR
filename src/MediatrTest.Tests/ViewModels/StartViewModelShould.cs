@@ -23,20 +23,51 @@ namespace MediatrTest.Tests.ViewModels
         }
 
         [Fact]
-        public async Task ExecutePingOnInitialize()
+        public async Task ExecutePingHandler()
         {
             var vm = _fixture.Ioc.IoCConstruct<StartViewModel>();
 
-            vm.ErrorMessage
+            vm.PingResult
               .Should()
               .BeNullOrEmpty();
 
-            await vm.Initialize()
+            vm.PingCommand
+              .CanExecute()
+              .Should()
+              .BeTrue();
+
+            await vm.PingCommand
+                    .ExecuteAsync()
                     .ConfigureAwait(false);
 
-            vm.ErrorMessage
+            vm.PingResult
               .Should()
               .Be("Ping Pong");
+        }
+
+        [Fact]
+        public async Task ExecuteOneWayHandler()
+        {
+            var vm = _fixture.Ioc.IoCConstruct<StartViewModel>();
+
+            vm.OneWayResult
+              .Should()
+              .BeNullOrEmpty();
+
+            vm.OneWayCommand
+              .CanExecute()
+              .Should()
+              .BeTrue();
+
+            await vm.OneWayCommand
+                    .ExecuteAsync()
+                    .ConfigureAwait(false);
+
+            vm.OneWayResult
+              .Should()
+              .NotBeNullOrEmpty()
+              .And
+              .Contain("no errors");
         }
     }
 }
