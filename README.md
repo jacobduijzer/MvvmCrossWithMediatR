@@ -1,4 +1,4 @@
-#MvvmCross with MediatR
+# MvvmCross with MediatR
 
 I started using MediatR a while ago but didn't get into the full benefits of the MediatR library. Last week I decided to give it a try but found out it was much harder than I thought. All samples of the library are working with different kind of IoC container frameworks but **not** with **MvvmCross**.
 
