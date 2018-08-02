@@ -38,16 +38,12 @@ namespace MediatrTest.Core
                 }
                 catch (Exception)
                 {
+                    // a "bit" buggy, I know!
                     return Array.CreateInstance(serviceType.GenericTypeArguments[0], 0);
                 }
             });
 
             RegisterAppStart<StartViewModel>();
-        }
-
-        public override void Startup(object hint)
-        {
-            base.Startup(hint);
         }
 
         public override void Reset()

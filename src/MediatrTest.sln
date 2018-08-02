@@ -8,6 +8,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrTest.Core", "MediatrTest.Core\MediatrTest.Core.csproj", "{2ECD8141-959E-45B6-9647-8F06FEA8050F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7BD15BDB-5B34-4308-A9BA-D94A20598CC1}"
+	ProjectSection(SolutionItems) = preProject
+		..\README.md = ..\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatrTest.Tests", "MediatrTest.Tests\MediatrTest.Tests.csproj", "{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,5 +60,17 @@ Global
 		{2ECD8141-959E-45B6-9647-8F06FEA8050F}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{2ECD8141-959E-45B6-9647-8F06FEA8050F}.Debug|iPhone.ActiveCfg = Debug|Any CPU
 		{2ECD8141-959E-45B6-9647-8F06FEA8050F}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Release|iPhone.Build.0 = Release|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{E6AE3B2B-F1AC-417C-AE58-E31808A969A2}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
