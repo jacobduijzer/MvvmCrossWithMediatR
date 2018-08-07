@@ -1,0 +1,8 @@
+﻿{
+  "Title":  "Login",
+  "Username": "Username",
+  "UsernamePlaceHolder": "Please enter your username",
+  "Password":  "Password",
+  "PasswordPlaceHolder": "Please enter your password",
+  "ButtonText": "Login"
+}

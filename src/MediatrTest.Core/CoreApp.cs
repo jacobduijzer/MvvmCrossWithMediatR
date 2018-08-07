@@ -1,12 +1,11 @@
 ﻿using System;
+using MediatR;
+using MediatrTest.Core.Helpers;
+using MediatrTest.Core.ViewModels.Login;
 using MvvmCross;
 using MvvmCross.IoC;
 using MvvmCross.Localization;
 using MvvmCross.ViewModels;
-using MediatrTest.Core.Helpers;
-using MediatrTest.Core.ViewModels;
-using MediatR;
-using System.Linq;
 
 namespace MediatrTest.Core
 {
@@ -23,7 +22,7 @@ namespace MediatrTest.Core
                 .EndingWith("Handler")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
-            
+
             Mvx.RegisterSingleton<IMvxTextProvider>(new TextProviderBuilder().TextProvider);
 
             Mvx.LazyConstructAndRegisterSingleton<IMediator, Mediator>();
@@ -43,12 +42,7 @@ namespace MediatrTest.Core
                 }
             });
 
-            RegisterAppStart<StartViewModel>();
-        }
-
-        public override void Reset()
-        {
-            base.Reset();
+            RegisterAppStart<LoginViewModel>();
         }
     }
 }
