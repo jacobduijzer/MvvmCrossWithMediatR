@@ -26,7 +26,6 @@
                     Command="{Binding LoginCommand}"
                     CommandParameter="{Binding CanLogin}"
                     IsEnabled="{Binding CanLogin}"/>
-            
         </StackLayout>
     </ContentPage.Content>
 </views:MvxContentPage>

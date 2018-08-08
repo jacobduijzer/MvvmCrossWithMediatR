@@ -23,23 +23,19 @@ namespace MediatrTest.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            Mvx.RegisterSingleton<IMvxTextProvider>(new TextProviderBuilder().TextProvider);
+            Mvx.IoCProvider.RegisterSingleton<IMvxTextProvider>(new TextProviderBuilder().TextProvider);
 
-            Mvx.LazyConstructAndRegisterSingleton<IMediator, Mediator>();
+            Mvx.IoCProvider.LazyConstructAndRegisterSingleton<IMediator, Mediator>();
 
-            Mvx.RegisterSingleton<ServiceFactory>((Type serviceType) =>
+            Mvx.IoCProvider.RegisterSingleton<ServiceFactory>((Type serviceType) =>
             {
-                var resolver = Mvx.Resolve<IMvxIoCProvider>();
+                var resolver = Mvx.IoCProvider.Resolve<IMvxIoCProvider>();
 
-                try
-                {
+                if(resolver.CanResolve(serviceType))
                     return resolver.Resolve(serviceType);
-                }
-                catch (Exception)
-                {
-                    // a "bit" buggy, I know!
-                    return Array.CreateInstance(serviceType.GenericTypeArguments[0], 0);
-                }
+                
+                // a "bit" buggy, I know!
+                return Array.CreateInstance(serviceType.GenericTypeArguments[0], 0);
             });
 
             RegisterAppStart<LoginViewModel>();

@@ -20,14 +20,22 @@ namespace MediatrTest.Core.ViewModels.Login
         public string Username
         {
             get => _username;
-            set { SetProperty(ref _username, value); RaisePropertyChanged(() => CanLogin); }
+            set
+            {
+                if (SetProperty(ref _username, value))
+                    RaisePropertyChanged(() => CanLogin);
+            }
         }
 
         private string _password;
         public string Password
         {
             get => _password;
-            set { SetProperty(ref _password, value); RaisePropertyChanged(() => CanLogin); }
+            set
+            {
+                if (SetProperty(ref _password, value))
+                    RaisePropertyChanged(() => CanLogin);            
+            }
         }
 
         private string _errorMessage;
